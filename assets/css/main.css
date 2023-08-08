@@ -1531,6 +1531,7 @@ input, select, textarea {
 		position: relative;
 		max-width: 100%;
 		z-index: 3;
+
 	}
 
 		#main article {
@@ -1546,7 +1547,8 @@ input, select, textarea {
 			position: relative;
 			width: 40rem;
 			max-width: 100%;
-			background-color: rgba(27, 31, 34, 0.85);
+			background-color: rgba(45, 40, 35, 0.85);
+			/* rgba(27, 31, 34, 0.85); */
 			border-radius: 4px;
 			opacity: 0;
 		}
