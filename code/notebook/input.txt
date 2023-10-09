@@ -1,0 +1,80 @@
+# include <stdio.h>
+
+int main()
+{
+	int i, num, j;
+	printf ("Enter the number: ");
+	scanf ("%d", &num );
+
+	for (i=1; i<num; i++)
+		j=j*i;    
+
+	printf("The factorial of %d is %d\n",num,j);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include "common.h"
+#include <stdio.h>
+#include <string.h>
+
+int main(int ac, char *av[]) {
+    char word[81];      
+    int lineLength = 0; 
+    int isFirstWord = 1; 
+
+    while (scanf("%80s", word) == 1) {
+        int wordLength = strlen(word);
+
+        
+        if (lineLength + wordLength + 1 <= 80) {
+           
+            if (!isFirstWord) {
+                printf(" ");
+                lineLength++;
+            }
+            printf("%s", word);
+            lineLength += wordLength;
+            isFirstWord = 0; 
+        } else {
+            printf("\n%s", word);
+            lineLength = wordLength;
+            isFirstWord = 0; 
+        }
+    }
+
+    printf("\n"); 
+    return 0;
+}
