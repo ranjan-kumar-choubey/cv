@@ -7582,8 +7582,214 @@ How do you check Value ?
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># List into infinte loop</span>
+
+<span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="n">end</span> <span class="o">=</span> <span class="s2">" "</span><span class="p">)</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Alternative to save from INF Loop</span>
+
+<span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)):</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>0 [2, 3, 4, 5, 0, 2]
+1 [2, 3, 4, 5, 0, 2, 3]
+2 [2, 3, 4, 5, 0, 2, 3, 4]
+3 [2, 3, 4, 5, 0, 2, 3, 4, 5]
+4 [2, 3, 4, 5, 0, 2, 3, 4, 5, 0]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># lsit giving two item at a time</span>
+<span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>0 12
+1 13
+2 14
+3 15
+4 10
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Multiple assignment</span>
+<span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">r</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span>
+
+<span class="c1"># one line swap</span>
+<span class="n">a</span><span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span><span class="mi">20</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span><span class="n">a</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>20 10
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#conditional Statements : if , elif , pass</span>
+<span class="c1"># Iterations : while , for</span>
+<span class="c1"># function : pass, def</span>
+
+
+<span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">args</span> <span class="o">!=</span> <span class="s2">"Jasmine"</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+<span class="n">args</span> <span class="o">=</span> <span class="s2">"Jasmine"</span>    
+<span class="n">name</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Jasmine
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Look at Python Library</span>
+
+<span class="sd">""" </span>
+<span class="sd">1. Iterators</span>
+<span class="sd">2. List Comprehension - Example :  lst  = [i for i in range(10)]</span>
+<span class="sd">3. Generators</span>
+
+<span class="sd">"""</span>
+<span class="kn">import</span> <span class="nn">timeit</span>
+<span class="c1"># Note : Whenever you want to build a list use List Comprehension </span>
+
+<span class="n">lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+<span class="n">lst_even</span> <span class="o">=</span> <span class="p">[</span><span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span>  <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">),</span><span class="mi">2</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span><span class="o">-</span><span class="n">start_time</span><span class="p">)</span>
+
+<span class="c1"># Or </span>
+<span class="n">lst_even1</span> <span class="o">=</span> <span class="p">[</span><span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span> <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">2</span> ==0]
+
+<span class="c1">#Or</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+<span class="n">lst_even2</span> <span class="o">=</span><span class="n">lst</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># Works faster</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span><span class="o">-</span><span class="n">start_time</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">lst_even</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lst_even1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lst_even2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>0.00020176699945295695
+6.744699931005016e-05
+[0, 2, 4, 6, 8]
+[0, 2, 4, 6, 8]
+[0, 2, 4, 6, 8]
+</pre>
 </div>
 </div>
 </div>
@@ -7595,6 +7801,128 @@ How do you check Value ?
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Generators-in-Python">Generators in Python<a class="anchor-link" href="#Generators-in-Python">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># A generator function that yields 1 for first time, </span>
+<span class="c1"># 2 second time and 3 third time </span>
+<span class="k">def</span> <span class="nf">simpleGeneratorFun</span><span class="p">():</span> 
+	<span class="k">yield</span> <span class="s2">"ranjan"</span>		
+	<span class="k">yield</span> <span class="s2">"jasmine"</span>			
+			
+
+<span class="c1"># Driver code to check above generator function </span>
+<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">simpleGeneratorFun</span><span class="p">():</span> 
+	<span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>ranjan
+jasmine
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Measure-time-of-a-python-Function-:-timeit-module">Measure time of a python Function : timeit module<a class="anchor-link" href="#Measure-time-of-a-python-Function-:-timeit-module">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">timeit</span>
+
+<span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">fact</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">fact</span> <span class="o">=</span> <span class="n">fact</span> <span class="o">*</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">fact</span>
+    
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Start Time : "</span><span class="p">,</span><span class="n">start_time</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The factorial of </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> is : "</span><span class="p">,</span><span class="n">fact</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"End Time : "</span><span class="p">,</span><span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"time taken to compute factorail"</span><span class="p">,</span><span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span><span class="o">-</span><span class="n">start_time</span><span class="p">,</span><span class="s2">"sec"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Start Time :  10873.502984933
+The factorial of 10 is :  3628800
+End Time :  10873.503205252
+time taken to compute factorail 0.00027902500005438924 sec
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Globals-Function">Globals Function<a class="anchor-link" href="#Globals-Function">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">globals</span><span class="p">()</span> <span class="c1"># Gives all global function &amp; global variable</span>
+
+
+
+<span class="c1"># read timeit.timeit function from doc</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
