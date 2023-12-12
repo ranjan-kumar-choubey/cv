@@ -7,13 +7,21 @@ extern STACK create_stack(unsigned int capacity)
     S.capacity = capacity;
     S.top = -1;
     S.elements = (int *)malloc(sizeof(S.capacity));
+    // handling Memory allocation
+    if(S.elements == NULL){
+        fprintf(stderr,"Malloc Fails");
+        exit(1);
+    }
 
     return S;
 }
 extern int push(STACK *s, DATA *d)
 {
-    if (s->top == s->capacity - 1)
+    if (s->top == s->capacity - 1){
+        s->capacity=s->capacity*2;
+        s->elements=(int *)realloc(s->elements,sizeof(s->capacity));
         return 0; // stack overflow
+    }
 
     s->top += 1;
     s->elements[s->top] = *d;
